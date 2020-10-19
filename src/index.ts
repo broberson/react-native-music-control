@@ -88,8 +88,15 @@ const MusicControl = {
     })
     NativeMusicControl.stopControl()
   },
+  setNotificationIds: function(id: number, channel: string) {
+    if(IS_ANDROID) {
+      NativeMusicControl.setNotificationIds(id, channel)
+    }
+  },
   handleAudioInterruptions: function(enable: boolean): void {
-    NativeMusicControl.observeAudioInterruptions(enable)
+    if(!IS_ANDROID) {
+      NativeMusicControl.observeAudioInterruptions(enable)
+    }
   }
 }
 

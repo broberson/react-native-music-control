@@ -21,6 +21,7 @@ declare const MusicControl: {
     on: (actionName: Command, cb: (value: any) => void) => void;
     off: (actionName: Command) => void;
     stopControl: () => void;
+    setNotificationIds: (id: number, channel: string) => void;
     handleAudioInterruptions: (enable: boolean) => void;
 };
 export default MusicControl;
